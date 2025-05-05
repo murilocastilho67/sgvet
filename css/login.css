@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+body{
+  background-color: #ebebe6;
+  font-family: "Quicksand", sans-serif;
+}
+/* Tela login */
+#telaLogin{
+	background-color: #fff;
+	width: 400px;
+	min-height: 400px;
+	margin: 50px auto;
+	border-radius: 8px;
+	padding: 25px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.logo{
+	width: 206px;
+	height: 75px;
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	border-radius: 6px;
+	margin: 0 auto;
+}
+#telaLogin form input{
+	width: 100%;
+	padding: 15px;
+	margin-top: 15px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	font-family: "Quicksand", sans-serif;
+	font-size: 18px;
+}
+#telaLogin form input[type='submit']{
+	background-color: #3299cf;
+	color: #fff;
+	font-weight: 700;
+}
+#msg{
+	display: block;
+	padding: 5px;
+	border: 3px solid red;
+	color: red;
+	margin-top: 10px;
+	border-radius: 8px;
+	text-align: center;
+	display: none;
+}
+
+
+
+
+
+
+/*
+.logo{
+  width: 200px;
+  margin: 0 auto;
+  height: 100px;
+  background-image: url(https://uniarp.edu.br/wp-content/uploads/2024/08/logo-site.png);
+  background-repeat: no-repeat;
+}
+#telaLogin form input{
+	width: 100%;
+	padding: 15px;
+	margin-top: 15px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	  font-family: "Quicksand", sans-serif;
+}
+#telaLogin form input[type='submit']{
+	background-color: #3299cf;
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+}
+*/

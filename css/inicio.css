@@ -1,0 +1,174 @@
+			@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');	
+			*{margin:0;padding:0;box-sozing: border-box}
+			body{
+				background-color: #ebebe6;
+				font-family: 'Nunito', sans-serif;
+			}
+			a{
+				text-decoration: none;
+			}
+			/* SIDEBAR MENU */
+			#sidebar{
+				position: fixed;
+				background-color: #fff;
+				width: 15%;
+				height: 100%;
+				z-index: 2;
+			}
+			#sidebar ul{
+				padding-top: 15px;
+			}
+			#sidebar ul li{
+				padding: 20px;
+				border-bottom: 2px solid #ddd;
+			}
+			#sidebar ul li a{
+				font-size: 14px;
+			}
+			/* HEADER */
+			#header{
+				background-color: #5a65eb;
+				padding-left: 16%;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				position: fixed;
+				width: 100%;
+				z-index: 1;
+			}
+			#header .logo{
+				//display: block;
+				width: 30%;
+				float: left;
+				color: #fff;
+			}
+			#header .logo small{
+				font-size: 12px;
+			}
+			#header .user-menu{
+				width: 54%;
+				float: left;
+				text-align: right;
+				padding-top: 10px;
+			}
+			#header .user-menu a{
+				display: inline-block;
+				background-color: #fff;
+				padding: 5px 20px;
+				border-radius: 16px;
+				margin: 0 15px;
+				font-size: 12px;
+			}
+			/* CONTEINER */
+			#conteiner{
+				padding-left: 16%;
+				padding-top: 100px;
+			}
+			#conteiner .box{
+				background-color: #fff;
+				border-radius: 8px;
+				margin:20px;
+				padding:20px;
+			}
+			.box h2{
+				font-size: 22px;
+				padding: 15px 0px;
+				border-bottom: 2px solid #5a65eb;
+				font-weight: 900;
+				color: #5a65eb;
+			}
+			form{
+				margin-top: 30px;
+			}
+			form .line{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			input{
+				font-family: 'Lato', sans-serif;
+				font-size: 18px;
+			}
+			form label{
+				display: block;
+				float: left;
+				padding: 12px;
+				color: #444;
+				margin-right: 20px;
+				font-size: 18px;
+				font-weight: 600;
+				min-width: 200px;
+			}
+			form input[type="text"], 
+			form input[type="number"]{
+				float: left;
+				padding: 12px;
+				border: 0px;
+				border-bottom: 2px solid #444;
+				min-width: 350px;
+				text-transform: uppercase;
+			}
+			form select{
+				float: left;
+				padding: 12px;
+				border: 0px;
+				border-bottom: 2px solid #444;
+				min-width: 350px;
+				text-transform: uppercase;
+			}
+			form .controle,
+			form input[type="submit"]{
+				display: block;
+				float: left;
+				border-radius: 6px;
+				background-color: #5a65eb;
+				color: #fff;
+				padding: 10px 10px;
+				margin-left: 10px;
+				margin-top: 5px;
+				border: none;
+			}
+			
+			/* ESTILO POP-UP */
+			#modal{
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+				position: fixed;
+				z-index: 20;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			#popup{
+				position: fixed;
+				width: 400px;
+				min-height: 300px;
+				border-radius: 16px;
+				background-color: #fff;
+				z-index: 21;
+				top: 100px;
+				left: calc(50% - 200px);
+				box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+				padding: 0px;
+				display: none;
+			}
+			.conteudo-popup{
+				display: none;
+			}
+			.conteudo-popup h3{
+				padding: 10px;
+				background-color: #5a65eb;
+				border-top-left-radius: 16px;
+				border-top-right-radius: 16px;
+				color: #fff;				
+			}
+			.conteudo-popup .texto{
+				padding: 10px;
+			}			
+			#closePopUp{
+				position: absolute;
+				top: 15px;
+				right: 20px;
+				color: #f0f0f0;
+			}
+			
