@@ -21,8 +21,14 @@ $(document).ready(function(){
 	var cadastroUsuarios = $('#cadastrar_usuario');
 	cadastroUsuarios.on('click', function( e ){
 		e.preventDefault();
-		//console.log('Botão Clicado!');
-		$.post('http://localhost/sgvet/api/novoUsuario').done();
+		var novo_usuario = $('input[name="novo_usuario"]').val();
+		var nova_senha = $('input[name="nova_senha"]').val();
+		var tipo_usuario = $('select[name="tipo_usuario"]').val();
+
+		$.post('http://localhost/sgvet/api/cadastroUsuarios',{
+			novo_usuario:novo_usuario, nova_senha:nova_senha, tipo_usuario:tipo_usuario
+		})
+		.done( console.log);
 	});
 
 });

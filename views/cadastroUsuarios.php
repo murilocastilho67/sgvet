@@ -11,7 +11,7 @@
 					</div>
 					<div class="line">
 						<label>Tipo de Usuário: </label>
-						<select>
+						<select name="tipo_usuario">
 							<option disabled selected> Selecione ... </option>
 							<option value="externo"> Externo </option>
 							<option value="atendente"> Atendente </option>

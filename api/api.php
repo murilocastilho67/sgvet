@@ -56,6 +56,28 @@ if ( isset($_REQUEST['path'])){
 			
 		}
 	}
+	#################### Ação: cadastro de usuario
+	if($acao == 'cadastroUsuarios' AND $method == 'POST'){
+		if( isset($_POST['novo_usuario'] ) ){
+			$novo_usuario = $_POST['novo_usuario'];
+			$nova_senha = $_POST['nova_senha'];
+			$tipo_usuario = $_POST['tipo_usuario'];
+			// CONSULTA NA BASE
+			$verificaUsuario = $Conexao->prepare("
+			SELECT * FROM usuarios WHERE usuario = :usuario");
+			$verificaUsuario->bindParam(':usuario', $novo_usuario,
+				PDO::PARAM_STR);
+			$verificaUsuario->execute();
+			$res = $verificaUsuario->fetchAll();
+			if( count($res) > 0 ){
+				//usuário já existe
+				echo json_encode("jaexiste");
+			}else{
+				//posso cadastrar...
+				echo json_encode("naoexiste");
+			}
+		}
+	}
 }
 
 
