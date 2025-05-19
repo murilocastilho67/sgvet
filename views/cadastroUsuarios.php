@@ -2,6 +2,10 @@
 				<h2><i class="fa fa-user-plus"></i>&nbsp; Cadastro de Usuários</h2>
 				<form>
 					<div class="line">
+						<label>E-mail: </label>
+						<input type="text" name="email"/>
+					</div>
+					<div class="line">
 						<label>Nome de Usuário: </label>
 						<input type="text" name="novo_usuario"/>
 					</div>

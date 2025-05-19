@@ -24,9 +24,11 @@ $(document).ready(function(){
 		var novo_usuario = $('input[name="novo_usuario"]').val();
 		var nova_senha = $('input[name="nova_senha"]').val();
 		var tipo_usuario = $('select[name="tipo_usuario"]').val();
+		var novo_email = $('input[name="email"]').val();
+		
 
 		$.post('http://localhost/sgvet/api/cadastroUsuarios',{
-			novo_usuario:novo_usuario, nova_senha:nova_senha, tipo_usuario:tipo_usuario
+			novo_usuario:novo_usuario, nova_senha:nova_senha, tipo_usuario:tipo_usuario, novo_email:novo_email
 		})
 		.done( console.log);
 	});

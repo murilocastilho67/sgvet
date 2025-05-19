@@ -61,11 +61,15 @@ if ( isset($_REQUEST['path'])){
 		if( isset($_POST['novo_usuario'] ) ){
 			$novo_usuario = $_POST['novo_usuario'];
 			$nova_senha = $_POST['nova_senha'];
+			$nova_senha = hash('sha256', data: $nova_senha);
 			$tipo_usuario = $_POST['tipo_usuario'];
+			$novo_email = $_POST['novo_email'];
 			// CONSULTA NA BASE
 			$verificaUsuario = $Conexao->prepare("
-			SELECT * FROM usuarios WHERE usuario = :usuario");
+			SELECT * FROM usuarios WHERE usuario = :usuario OR email = :email");
 			$verificaUsuario->bindParam(':usuario', $novo_usuario,
+				PDO::PARAM_STR);
+			$verificaUsuario->bindParam(':email', $novo_email,
 				PDO::PARAM_STR);
 			$verificaUsuario->execute();
 			$res = $verificaUsuario->fetchAll();
@@ -74,7 +78,18 @@ if ( isset($_REQUEST['path'])){
 				echo json_encode("jaexiste");
 			}else{
 				//posso cadastrar...
-				echo json_encode("naoexiste");
+				$insereUsuario = $Conexao->prepare("
+					INSERT INTO usuarios (usuario, senha, email, perfil)
+					VALUES (:usuario, :senha, :email, :perfil)
+				");
+				$insereUsuario->bindParam(':usuario', $novo_usuario, PDO::PARAM_STR);
+				$insereUsuario->bindParam(':senha', $nova_senha, PDO::PARAM_STR);
+				$insereUsuario->bindParam(':email', $novo_email, PDO::PARAM_STR);
+				$insereUsuario->bindParam(':perfil', $tipo_usuario, PDO::PARAM_STR);
+				if($insereUsuario->execute()){
+					echo json_encode("cadastrado");
+				}
+				
 			}
 		}
 	}
